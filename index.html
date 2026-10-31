@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Portfoliyim | Front-End Dasturchi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+
+    <!-- 1. HEADER VA NAVIGATSIYA -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logotip -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400">Portfolio<span class="text-gray-800 dark:text-white">.uz</span></a>
+                </div>
+
+                <!-- Desktop Menyu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Asosiy</a>
+                    <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Men haqimda</a>
+                    <a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Loyihalar</a>
+                    <a href="#skills" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Ko'nikmalar</a>
+                    <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Bog'lanish</a>
+                    
+                    <!-- Dark/Light Mode tugmasi -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-750 transition">
+                        <i id="theme-icon" class="fa-solid fa-moon"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobil menyu va rejim tugmasi -->
+                <div class="flex items-center md:hidden space-x-3">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                        <i class="fa-solid fa-moon theme-icon-mob"></i>
+                    </button>
+                    <button id="menu-btn" class="text-gray-700 dark:text-gray-300 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobil Dropdown Menyu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 pt-2 pb-4 space-y-2">
+            <a href="#home" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Asosiy</a>
+            <a href="#about" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Men haqimda</a>
+            <a href="#projects" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Loyihalar</a>
+            <a href="#skills" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Ko'nikmalar</a>
+            <a href="#contact" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Bog'lanish</a>
+        </div>
+    </header>
+
+    <!-- 2. HERO BO'LIMI -->
+    <section id="home" class="min-h-[85vh] flex items-center justify-center text-center px-4">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <span class="px-4 py-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50 rounded-full">Salom, men kelajakdagi hamkasbingizman 👋</span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+                Men <span class="text-indigo-600 dark:text-indigo-400">Front-End</span> Dasturchiman
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+                Foydalanuvchilar uchun qulay, zamonaviy va tez ishlaydigan veb-ilovalar va interfeyslar yaratishga ixtisoslashganman.
+            </p>
+            <div class="flex justify-center space-x-4 pt-4">
+                <a href="#projects" class="px-6 py-3 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30">Loyihalarim</a>
+                <a href="#contact" class="px-6 py-3 rounded-xl border border-gray-300 dark:border-gray-700 font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">Bog'lanish</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEN HAQIMDA -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800/50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Men Haqimda</h2>
+                <div class="w-16 h-1 bg-indigo-600 mx-auto mt-2 rounded"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold">Veb dasturlashga bo'lgan qiziqishim</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Men zamonaviy veb texnologiyalarini o'rganish va ularni amalda qo'llashni yoqtiraman. Har bir loyihada dizayn va kod tozaligiga, shuningdek foydalanuvchi tajribasiga (UX) alohida e'tibor qarataman.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Maqsadim – murakkab muammolarni oddiy va elegant kodlar yordamida hal qilish.
+                    </p>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 space-y-4">
+                    <div class="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-3">
+                        <span class="font-semibold">Ism:</span>
+                        <span class="text-gray-600 dark:text-gray-400">Azizbek Rahimov</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-3">
+                        <span class="font-semibold">Tajriba:</span>
+                        <span class="text-gray-600 dark:text-gray-400">1+ yil</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-3">
+                        <span class="font-semibold">Email:</span>
+                        <span class="text-gray-600 dark:text-gray-400">example@gmail.com</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-semibold">Joylashuv:</span>
+                        <span class="text-gray-600 dark:text-gray-400">Toshkent, O'zbekiston</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LOYIHALAR BO'LIMI -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Tanlangan Loyihalar</h2>
+                <div class="w-16 h-1 bg-indigo-600 mx-auto mt-2 rounded"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Loyih 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition">
+                    <div class="h-48 bg-indigo-100 dark:bg-indigo-950/40 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-xl">
+                        <i class="fa-solid fa-clock text-4xl"></i>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold">Pomodoro Taymer</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Fokus va vaqtni boshqarish uchun mo'ljallangan interaktiv taymer ilovasi.</p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-700 rounded-md">HTML</span>
+                            <span class="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-700 rounded-md">CSS</span>
+                            <span class="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-700 rounded-md">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"><i class="fa-brands fa-github mr-1">Code</i></a>
+                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"><i class="fa-solid fa-external-link-alt mr-1">Demo</i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loyih 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition">
+                    <div class="h-48 bg-emerald-100 dark:bg-emerald-950/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xl">
+                        <i class="fa-solid fa-wallet text-4xl"></i>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold">Xarajatlar Hisoblagich</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Shaxsiy moliyaviy oqimni nazorat qilish va localStorage bilan ishlaydigan dastur.</p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-700 rounded-md">Tailwind</span>
+                            <span class="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-700 rounded-md">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"><i class="fa-brands fa-github mr-1">Code</i></a>
+                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"><i class="fa-solid fa-external-link-alt mr-1">Demo</i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loyih 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition">
+                    <div class="h-48 bg-amber-100 dark:bg-amber-950/40 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-xl">
+                        <i class="fa-solid fa-cloud-sun text-4xl"></i>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold">Ob-havo Vidjeti</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Tashqi API yordamida istalgan shaharning real vaqtdagi ob-havo ma'lumotlarini ko'rsatish.</p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-700 rounded-md">API Fetch</span>
+                            <span class="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-700 rounded-md">Async/Await</span>
+                        </div>
+                        <div class="flex space-x-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"><i class="fa-brands fa-github mr-1">Code</i></a>
+                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"><i class="fa-solid fa-external-link-alt mr-1">Demo</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. KO'NIKMALAR BO'LIMI -->
+    <section id="skills" class="py-20 bg-white dark:bg-gray-800/50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Mening Ko'nikmalarim</h2>
+                <div class="w-16 h-1 bg-indigo-600 mx-auto mt-2 rounded"></div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl hover:border-indigo-600 transition">
+                    <i class="fa-brands fa-html5 text-4xl text-orange-500 mb-3"></i>
+                    <h4 class="font-semibold">HTML5</h4>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl hover:border-indigo-600 transition">
+                    <i class="fa-brands fa-css3-alt text-4xl text-blue-500 mb-3"></i>
+                    <h4 class="font-semibold">CSS3 / Tailwind</h4>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl hover:border-indigo-600 transition">
+                    <i class="fa-brands fa-js text-4xl text-yellow-500 mb-3"></i>
+                    <h4 class="font-semibold">JavaScript</h4>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl hover:border-indigo-600 transition">
+                    <i class="fa-brands fa-git-alt text-4xl text-red-500 mb-3"></i>
+                    <h4 class="font-semibold">Git & GitHub</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FOOTER VA BOG'LANISH -->
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Bog'lanish</h2>
+                <div class="w-16 h-1 bg-indigo-600 mx-auto mt-2 rounded"></div>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Savollaringiz bormi yoki hamkorlik qilmoqchimisiz? Menga yozing!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Aloqa Ma'lumotlari & Socials -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Ijtimoiy tarmoqlar</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Meni quyidagi platformalar orqali ham topishingiz mumkin:</p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com" target="_blank" class="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xl hover:bg-indigo-600 hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xl hover:bg-indigo-600 hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://telegram.org" target="_blank" class="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xl hover:bg-indigo-600 hover:text-white transition"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Forma -->
+                <form onsubmit="event.preventDefault(); alert('Xabaringiz muvaffaqiyatli yuborildi!');" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Ismingiz</label>
+                        <input type="text" required class="w-full px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-indigo-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Email</label>
+                        <input type="email" required class="w-full px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-indigo-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Xabar</label>
+                        <textarea rows="4" required class="w-full px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-indigo-600"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30">Yuborish</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-6 text-center text-sm text-gray-500">
+        <p>&copy; 2026 Portfolio.uz. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <!-- JAVASCRIPT QISMI -->
+    <script>
+        // Mobil menyuni ochish/yopish
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobil menyudagi havolani bosganda menyuni yopish
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Dark/Light Mode funksionalligi
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeIconMob = document.querySelector('.theme-icon-mob');
+
+        function checkTheme() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                themeIconMob.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                themeIconMob.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                themeIconMob.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                themeIconMob.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleMobileBtn.addEventListener('click', toggleTheme);
+
+        // Sahifa yuklanganda rejimni tekshirish
+        checkTheme();
+    </script>
+</body>
+</html>
